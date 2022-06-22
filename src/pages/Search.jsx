@@ -10,7 +10,7 @@ const Search = () => {
     const his=useHistory()
     let vall=text.replaceAll("+", " ")
     const  getvideo=async()=>{
-        const res=await axios.get(`https://first-mongoapp.herokuapp.com/search/${vall}`)
+        const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/search/${vall}`)
         setAllvideo(res.data)
     }
     useEffect(() => {
@@ -21,7 +21,7 @@ const Search = () => {
 
     
     const checkAuth=()=>{
-        axios.get("https://first-mongoapp.herokuapp.com/isAuth",{
+        axios.get("https://youtubeclonejeya.herokuapp.com/isAuth",{
             headers:{
              "x-access-token":localStorage.getItem("Youtubetoken")
             }

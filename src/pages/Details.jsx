@@ -23,7 +23,7 @@ const Details = () => {
   const his= useHistory()
 
     const getidvideo=async()=>{
-        const res=await axios.get(`https://first-mongoapp.herokuapp.com/getidvideo/${id}`)
+        const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/getidvideo/${id}`)
         setIDVIDEO(res.data)
        
        
@@ -31,12 +31,12 @@ const Details = () => {
       }
 
       const checksub=async()=>{
-        const res=await axios.get(`https://first-mongoapp.herokuapp.com/getidvideo/${id}`)
+        const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/getidvideo/${id}`)
         const data={
             channel:res.data[0].channel,
             uid:YoutubeUserId
         }
-        const ress=await axios.post(`https://first-mongoapp.herokuapp.com/checksubscribe`,data)
+        const ress=await axios.post(`https://youtubeclonejeya.herokuapp.com/checksubscribe`,data)
        if(ress.data.status)
        {
         setCheckSubb(true)
@@ -47,12 +47,12 @@ const Details = () => {
 
 
       const checklike=async()=>{
-        // const res=await axios.get(`https://first-mongoapp.herokuapp.com/getidvideo/${id}`)
+        // const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/getidvideo/${id}`)
         const data={
             vid:id,
             uid:YoutubeUserId
         }
-        const ress=await axios.post(`https://first-mongoapp.herokuapp.com/checklike`,data)
+        const ress=await axios.post(`https://youtubeclonejeya.herokuapp.com/checklike`,data)
        if(ress.data.status)
        {
         setCheckLikes(true)
@@ -62,12 +62,12 @@ const Details = () => {
       }
 
       const checktotalsub=async()=>{
-        const res=await axios.get(`https://first-mongoapp.herokuapp.com/getidvideo/${id}`)
+        const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/getidvideo/${id}`)
         const data={
             channel:res.data[0].channel,
            
         }
-        const ress=await axios.post(`https://first-mongoapp.herokuapp.com/checktotalsub`,data)
+        const ress=await axios.post(`https://youtubeclonejeya.herokuapp.com/checktotalsub`,data)
        if(ress.data)
        {
            setAllsub(ress.data.subscriber)
@@ -77,7 +77,7 @@ const Details = () => {
    
 
     const  getallvideo=async()=>{
-        const res=await axios.get('https://first-mongoapp.herokuapp.com/getallvideo')
+        const res=await axios.get('https://youtubeclonejeya.herokuapp.com/getallvideo')
         
         setAllVIDEO(res.data)
     }
@@ -138,7 +138,7 @@ const updateSub=async(channelname)=>{
         channel:channelname,
         userid:YoutubeUserId
     }
-    const res=await axios.post('https://first-mongoapp.herokuapp.com/subscribe',data)
+    const res=await axios.post('https://youtubeclonejeya.herokuapp.com/subscribe',data)
     checksub()
     checktotalsub()
 // console.log(res.data)
@@ -156,10 +156,10 @@ const updateLike=async(vid)=>{
         videoid:vid
     }
 
-    const result=await axios.post(`https://first-mongoapp.herokuapp.com/savelike`,dataata)
+    const result=await axios.post(`https://youtubeclonejeya.herokuapp.com/savelike`,dataata)
      
     
-    const res=await axios.post('https://first-mongoapp.herokuapp.com/dolike',data)
+    const res=await axios.post('https://youtubeclonejeya.herokuapp.com/dolike',data)
     getidvideo()
     checklike()
     // console.log(result.data)
@@ -177,7 +177,7 @@ useEffect(() => {
 
 
  const checkAuth=()=>{
-    axios.get("https://first-mongoapp.herokuapp.com/isAuth",{
+    axios.get("https://youtubeclonejeya.herokuapp.com/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Youtubetoken")
         }
@@ -215,9 +215,9 @@ useEffect(() => {
             vid:id,
             uid:YoutubeUserId
         }
-        const result=await axios.post(`https://first-mongoapp.herokuapp.com/savehistory`,data)
+        const result=await axios.post(`https://youtubeclonejeya.herokuapp.com/savehistory`,data)
         // console.log(result.data)
-        await axios.get(`https://first-mongoapp.herokuapp.com/postidviews/${id}`)
+        await axios.get(`https://youtubeclonejeya.herokuapp.com/postidviews/${id}`)
         
         his.push(`/video/${id}`)
     }

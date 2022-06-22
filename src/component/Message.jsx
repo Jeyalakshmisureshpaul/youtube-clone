@@ -8,7 +8,7 @@ const Message = ({uid,videoid}) => {
 
 
   const getmsg=async()=>{
-      const res=await axios.get(`https://first-mongoapp.herokuapp.com/mymsgdata/${videoid}`)
+      const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/mymsgdata/${videoid}`)
       if(res.data.length)
       {
         setALLMsg(res.data)
@@ -23,7 +23,7 @@ const Message = ({uid,videoid}) => {
         e.preventDefault()
         
 
-        const res= await axios.get(`https://first-mongoapp.herokuapp.com/myalldata/${uid}`)
+        const res= await axios.get(`https://youtubeclonejeya.herokuapp.com/myalldata/${uid}`)
         const data={
             name:res.data.name,
             profile_image:res.data.profile_image,
@@ -31,7 +31,7 @@ const Message = ({uid,videoid}) => {
             message:msg,
             usid:uid
         }
-        const ress= await axios.post(`https://first-mongoapp.herokuapp.com/postmsg`,data)
+        const ress= await axios.post(`https://youtubeclonejeya.herokuapp.com/postmsg`,data)
         if(ress.data.submit)
         {
             getmsg()

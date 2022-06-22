@@ -13,7 +13,7 @@ const Register = () => {
 
   const timeout = useRef(null)
   const checkAuth=()=>{
-      axios.get("https://first-mongoapp.herokuapp.com/isAuth",{
+      axios.get("https://youtubeclonejeya.herokuapp.com/isAuth",{
           headers:{
            "x-access-token":localStorage.getItem("Youtubetoken")
           }
@@ -46,7 +46,7 @@ const Register = () => {
         const data={
             name,email,password
         }
-        const ress=await axios.post('https://first-mongoapp.herokuapp.com/register',data)
+        const ress=await axios.post('https://youtubeclonejeya.herokuapp.com/register',data)
         // console.log(ress.data)
         if(ress.data.msg)
         {

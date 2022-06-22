@@ -9,9 +9,9 @@ const HistoryVideo = ({channel,thumbimg,title,vid,date,tagg}) => {
             vid:id,
             uid:YoutubeUserId
         }
-        const result=await axios.post(`https://first-mongoapp.herokuapp.com/savehistory`,data)
+        const result=await axios.post(`https://youtubeclonejeya.herokuapp.com/savehistory`,data)
         // console.log(result.data)
-        await axios.get(`https://first-mongoapp.herokuapp.com/postidviews/${id}`)
+        await axios.get(`https://youtubeclonejeya.herokuapp.com/postidviews/${id}`)
         
         
         his.push(`/video/${id}`)

@@ -9,7 +9,7 @@ const Videomessage = () => {
     const his=useHistory()
     const timeout = useRef(null)
     const checkAuth=()=>{
-      axios.get("https://first-mongoapp.herokuapp.com/isAuth",{
+      axios.get("https://youtubeclonejeya.herokuapp.com/isAuth",{
           headers:{
            "x-access-token":localStorage.getItem("Youtubetoken")
           }
@@ -37,7 +37,7 @@ const Videomessage = () => {
    },[])
 
     const getmsg=async()=>{
-        const res=await axios.get(`https://first-mongoapp.herokuapp.com/videomsg/${id}`)
+        const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/videomsg/${id}`)
         setAllmsg(res.data.reverse())
         // console.log(res.data.reverse())
     }

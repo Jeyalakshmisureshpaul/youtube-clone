@@ -15,7 +15,7 @@ const AddVideo = () => {
 
 
  const checkAuth=()=>{
-    axios.get("https://first-mongoapp.herokuapp.com/isAuth",{
+    axios.get("https://youtubeclonejeya.herokuapp.com/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Youtubetoken")
         }
@@ -45,7 +45,7 @@ const AddVideo = () => {
 
  
 const getchannel=async()=>{
-    const res=await axios.get(`https://first-mongoapp.herokuapp.com/profiledata/${YoutubeUserId}`)
+    const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/profiledata/${YoutubeUserId}`)
     if(res.data.length)
     {
         setChannelName(res.data[0].channel)
@@ -82,7 +82,7 @@ useEffect(() => {
             userid:YoutubeUserId
         }
         // console.log(data)
-        const ress=await axios.post('https://first-mongoapp.herokuapp.com/addvideo',data)
+        const ress=await axios.post('https://youtubeclonejeya.herokuapp.com/addvideo',data)
         if(ress.data)
         {
             his.push('/dashboard')

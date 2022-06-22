@@ -16,7 +16,7 @@ const his=useHistory()
 
     const timeout = useRef(null)
     const checkAuth=()=>{
-        axios.get("https://first-mongoapp.herokuapp.com/isAuth",{
+        axios.get("https://youtubeclonejeya.herokuapp.com/isAuth",{
             headers:{
              "x-access-token":localStorage.getItem("Youtubetoken")
             }
@@ -48,7 +48,7 @@ const his=useHistory()
 
     const getvideo=async()=>{
          
-        const res=await axios.get(`https://first-mongoapp.herokuapp.com/getlikes/${YoutubeUserId}`)
+        const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/getlikes/${YoutubeUserId}`)
         setLikevideo(res.data.reverse())
     }
     useEffect(() => {

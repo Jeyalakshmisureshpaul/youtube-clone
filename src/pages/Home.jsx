@@ -21,7 +21,7 @@ const his= useHistory()
         setPageNo(selected)
     }
     const  getallvideo=async()=>{
-        const res=await axios.get('https://first-mongoapp.herokuapp.com/getallvideo')
+        const res=await axios.get('https://youtubeclonejeya.herokuapp.com/getallvideo')
         // console.log(res.data)
         setAllVIDEO(res.data)
     }
@@ -37,7 +37,7 @@ const his= useHistory()
 
     const timeout = useRef(null)
     const checkAuth=()=>{
-        axios.get("https://first-mongoapp.herokuapp.com/isAuth",{
+        axios.get("https://youtubeclonejeya.herokuapp.com/isAuth",{
             headers:{
              "x-access-token":localStorage.getItem("Youtubetoken")
             }

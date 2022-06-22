@@ -10,7 +10,7 @@ const Dashboard = () => {
   const his=useHistory()
   const timeout = useRef(null)
   const checkAuth=()=>{
-    axios.get("https://first-mongoapp.herokuapp.com/isAuth",{
+    axios.get("https://youtubeclonejeya.herokuapp.com/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Youtubetoken")
         }
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
 
     const getdata=async()=>{
-        const res=await axios.get(`https://first-mongoapp.herokuapp.com/getvideo/${YoutubeUserId}`)
+        const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/getvideo/${YoutubeUserId}`)
         // console.log(res.data)
         if(res.data.length)
         {
@@ -52,7 +52,7 @@ const Dashboard = () => {
 
 
     const checktotalsub=async()=>{
-        const res=await axios.get(`https://first-mongoapp.herokuapp.com/getmychannel/${YoutubeUserId}`)
+        const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/getmychannel/${YoutubeUserId}`)
         
       if(res.data)
       {

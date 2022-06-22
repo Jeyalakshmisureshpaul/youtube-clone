@@ -13,7 +13,7 @@ const UserDetails = () => {
     const timeout = useRef(null)
 
     const checkAuth=()=>{
-      axios.get("https://first-mongoapp.herokuapp.com/isAuth",{
+      axios.get("https://youtubeclonejeya.herokuapp.com/isAuth",{
           headers:{
            "x-access-token":localStorage.getItem("Youtubetoken")
           }
@@ -42,7 +42,7 @@ const UserDetails = () => {
   
 
     const getData=async()=>{
-        const res=await axios.get(`https://first-mongoapp.herokuapp.com/profiledata/${YoutubeUserId}`)
+        const res=await axios.get(`https://youtubeclonejeya.herokuapp.com/profiledata/${YoutubeUserId}`)
         //  console.log(res.data.length)
         //  console.log(res.data)
          
@@ -63,7 +63,7 @@ const UserDetails = () => {
         formData.append("profileimg",profileimg)
         formData.append("channel",title)
         formData.append("user_id",YoutubeUserId)
-        let res=await axios.post("https://first-mongoapp.herokuapp.com/profile",formData);
+        let res=await axios.post("https://youtubeclonejeya.herokuapp.com/profile",formData);
         // console.log(res.data)
         if(res.data.submit)
        {
